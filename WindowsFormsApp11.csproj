@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -87,6 +87,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -95,11 +101,23 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resource1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -129,6 +147,84 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\e.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\g.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\h.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\i.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\j.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\k.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\l.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\o.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\p.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\q.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\r.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\s.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\t.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\u.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\v.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\w.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\y.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\z.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

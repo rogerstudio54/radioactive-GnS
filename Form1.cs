@@ -31,6 +31,43 @@ namespace WindowsFormsApp11
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            
+
+
+            imageList1.Images.Add(Properties.Resource1.a);
+            imageList1.Images.Add(Properties.Resource1.b);
+            imageList1.Images.Add(Properties.Resource1.c);
+            imageList1.Images.Add(Properties.Resource1.d);
+            imageList1.Images.Add(Properties.Resource1.e);
+            imageList1.Images.Add(Properties.Resource1.f);
+            imageList1.Images.Add(Properties.Resource1.g);
+            imageList1.Images.Add(Properties.Resource1.h);
+            imageList1.Images.Add(Properties.Resource1.i);
+            imageList1.Images.Add(Properties.Resource1.j);
+            imageList1.Images.Add(Properties.Resource1.k);
+            imageList1.Images.Add(Properties.Resource1.l);
+            imageList1.Images.Add(Properties.Resource1.m);
+            imageList1.Images.Add(Properties.Resource1.n);
+            imageList1.Images.Add(Properties.Resource1.o);
+            imageList1.Images.Add(Properties.Resource1.p);
+            imageList1.Images.Add(Properties.Resource1.q);
+            imageList1.Images.Add(Properties.Resource1.r);
+            imageList1.Images.Add(Properties.Resource1.s);
+            imageList1.Images.Add(Properties.Resource1.t);
+            imageList1.Images.Add(Properties.Resource1.u);
+            imageList1.Images.Add(Properties.Resource1.v);
+            imageList1.Images.Add(Properties.Resource1.w);
+            imageList1.Images.Add(Properties.Resource1.x);
+            imageList1.Images.Add(Properties.Resource1.y);
+            imageList1.Images.Add(Properties.Resource1.z);
+
+
+
+            pictureBox1.BackColor = Color.Black;
+            pictureBox2.BackColor = Color.Black;
+            pictureBox3.BackColor = Color.Black;
+            pictureBox4.BackColor = Color.Black;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -172,7 +209,13 @@ namespace WindowsFormsApp11
 
 
             //recherche un des codes de vallettre parmis  valeurs et retourne valeurnb
+            int numeroLigne = 0;
             label4.Text = "";
+            bool h=groupBox1.HasChildren;
+            if (h==true)
+            {
+                groupBox1.Controls.Clear();
+            }
             for (int x=0;x<=4;x++)
             {
                 int rech = valLettre[x];
@@ -186,7 +229,12 @@ namespace WindowsFormsApp11
                     Console.Write(valeursnb[inde].ToString());
                     Console.WriteLine();
                     label4.Text = label4.Text + valeursnb[inde].ToString() + "\r\n";
+                    numeroLigne += 1;
+                    dessine_pic(valeursnb[inde],numeroLigne);
+                    //creer les images
+                    
                 }
+                
             }
 
 
@@ -196,10 +244,195 @@ namespace WindowsFormsApp11
 
         }
 
+        public void dessine_pic(string valeurs,int ligne)
+        {
+            Point imLoc;
+            imLoc = new Point(90, (ligne*70)-60);
+            Label indik = new Label();
+            indik.Text = "Combinaison " + ligne.ToString() + " :";
+            indik.AutoSize = true;
+            indik.Parent = groupBox1;
+            indik.Location = new Point(2, (ligne*70)-50);
+            // ex : valeurs = "221"
+            int x = valeurs.Length;
+            for (int y=0;y<=x-1;y++)
+            {
+                int chiffre = 0;
+                bool isok=int.TryParse( valeurs.Substring(y, 1), out chiffre);
+               if (isok)
+                {
+                    PictureBox ik = new PictureBox();
+                    ik.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ik.BackColor = Color.Black;
+                    ik.Image = imageList1.Images[chiffre - 1];
+                    ik.Width = 50;
+                    ik.Height = 50;
+                    ik.Parent = groupBox1;
+                    ik.Location = imLoc;
+                    imLoc.X += 60;
+                }
+            }
+           
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 fo = new Form2();
             fo.Show();
+        }
+
+        
+        
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+
+            using (var choices = new Form3(1))
+            {
+                var result = choices.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    int val = choices.ReturnValue;            //values preserved after close
+                    textBox1.Text = alpha[val].ToString();
+                    pictureBox1.Image = imageList1.Images[val];
+                    
+                }
+            }
+
+            //Form3 choices = new Form3(1);
+            //choices.Show();
+            //string g = choices.ReturnValue1;
+
+        }
+
+        
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            using (var choices = new Form3(2))
+            {
+                var result = choices.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    int val = choices.ReturnValue;            //values preserved after close
+                    textBox2.Text = alpha[val].ToString();
+                    pictureBox2.Image = imageList1.Images[val];
+
+                }
+            }
+        }
+
+        private void textBox3_Click(object sender, EventArgs e)
+        {
+            using (var choices = new Form3(3))
+            {
+                var result = choices.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    int val = choices.ReturnValue;            //values preserved after close
+                    textBox3.Text = alpha[val].ToString();
+                    pictureBox3.Image = imageList1.Images[val];
+
+                }
+            }
+        }
+
+        private void textBox4_Click(object sender, EventArgs e)
+        {
+            using (var choices = new Form3(4))
+            {
+                var result = choices.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    int val = choices.ReturnValue;            //values preserved after close
+                    textBox4.Text = alpha[val].ToString();
+                    pictureBox4.Image = imageList1.Images[val];
+
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            using (var choices = new Form3(1))
+            {
+                var result = choices.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    int val = choices.ReturnValue;            //values preserved after close
+                    textBox1.Text = alpha[val].ToString();
+                    pictureBox1.Image = imageList1.Images[val];
+
+                }
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            using (var choices = new Form3(2))
+            {
+                var result = choices.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    int val = choices.ReturnValue;            //values preserved after close
+                    textBox2.Text = alpha[val].ToString();
+                    pictureBox2.Image = imageList1.Images[val];
+
+                }
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            using (var choices = new Form3(3))
+            {
+                var result = choices.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    int val = choices.ReturnValue;            //values preserved after close
+                    textBox3.Text = alpha[val].ToString();
+                    pictureBox3.Image = imageList1.Images[val];
+
+                }
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            using (var choices = new Form3(4))
+            {
+                var result = choices.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    int val = choices.ReturnValue;            //values preserved after close
+                    textBox4.Text = alpha[val].ToString();
+                    pictureBox4.Image = imageList1.Images[val];
+
+                }
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
