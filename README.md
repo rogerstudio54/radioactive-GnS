@@ -1,3 +1,7 @@
+Mise a jour ici : https://github.com/rogerstudio54/radioactive-GnS/tree/maj
+ajout des images pour plus de facilité
+
+
 # radioactive-GnS
 Ghost and skull radioactive , calcul des lettres du diable
 
